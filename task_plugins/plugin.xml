@@ -1,0 +1,8 @@
+<library path="simple_controller">
+  <class
+    name="task_plugins/SimpleController"
+    type="task_plugins::SimpleController"
+    base_class_type="nav2_core::Controller">
+    <description>Simple proportional Nav2 controller</description>
+  </class>
+</library>

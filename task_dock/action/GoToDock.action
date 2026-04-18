@@ -1,0 +1,7 @@
+bool start
+
+---
+bool status
+
+---
+float32 distance
