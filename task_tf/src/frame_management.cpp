@@ -76,23 +76,6 @@ private:
         map_to_odom.transform.rotation = tf2::toMsg(q);
 
         tf_broadcaster_->sendTransform(map_to_odom);
-
-        geometry_msgs::msg::TransformStamped odom_to_base;
-
-        odom_to_base.header.stamp = now;
-        odom_to_base.header.frame_id = "odom";
-        odom_to_base.child_frame_id = "base_link";
-
-        odom_to_base.transform.translation.x = 0.0;
-        odom_to_base.transform.translation.y = 0.0;
-        odom_to_base.transform.translation.z = 0.0;
-
-        odom_to_base.transform.rotation.x = 0.0;
-        odom_to_base.transform.rotation.y = 0.0;
-        odom_to_base.transform.rotation.z = 0.0;
-        odom_to_base.transform.rotation.w = 1.0;
-
-        tf_broadcaster_->sendTransform(odom_to_base);
     }
 
     rclcpp::TimerBase::SharedPtr timer_;

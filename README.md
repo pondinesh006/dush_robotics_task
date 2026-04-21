@@ -10,13 +10,23 @@ base_link -> odom -> map
 
 #### Steps to run:
 
-In terminal 1, Runing the ROS2 node for tf frames.
+In terminal 1, Runing the Static Transform for Odom -> Base_link
+
+```bash
+ros2 run tf2_ros static_transform_publisher \
+  --x 0 --y 0 --z 0 \
+  --roll 0 --pitch 0 --yaw 0 \
+  --frame-id odom \
+  --child-frame-id base_link
+```
+
+In terminal 2, Runing the ROS2 node for tf frames.
 
 ``` bash
 ros2 run task_tf frame_management
 ```
 
-In terminal 2, Running the Rviz for frame visualization.
+In terminal 3, Running the Rviz for frame visualization.
 ``` bash
 rviz2
 ```
